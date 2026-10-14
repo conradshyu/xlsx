@@ -1,0 +1,10 @@
+{
+  "name": "web-xlss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Load Excel files via a Rust/WebAssembly parser and edit them with Handsontable",
+  "scripts": {
+    "serve": "node server.js",
+    "build:wasm": "cd wasm-xlsx && wasm-pack build --target web --release --out-dir ../public/vendor/wasm-xlsx"
+  }
+}
