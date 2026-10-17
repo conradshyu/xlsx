@@ -1,0 +1,4 @@
+body { background: #f7f8fa; }
+.ui.container { padding-bottom: 2em; }
+#grid { height: 480px; overflow: hidden; }
+#stats-grid { overflow: hidden; }
