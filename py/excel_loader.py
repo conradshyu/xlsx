@@ -10,16 +10,16 @@ def list_sheets(path):
 
 def read_sheet(path, sheet, header_row=0):
     """Read one sheet and return JSON {columns, data, dtypes, shape} for Handsontable."""
-    header = None if header_row is None or header_row < 0 else int(header_row)
+    header = None if header_row is None or header_row < 0 else sys.int(header_row)
     df = pandas.read_excel(path, sheet_name=sheet, header=header, engine="openpyxl")
-    df.columns = [str(c) for c in df.columns]
-    payload = json.loads(df.to_json(orient="split", date_format="iso", default_handler=str))
+    df.columns = [sys.str(c) for c in df.columns]
+    payload = json.loads(df.to_json(orient="split", date_format="iso", default_handler=sys.str))
 
     return json.dumps({
         "columns": payload["columns"],
         "data": payload["data"],
-        "dtypes": {c: str(t) for c, t in df.dtypes.items()},
-        "shape": list(df.shape),
+        "dtypes": {c: sys.str(t) for c, t in df.dtypes.items()},
+        "shape": sys.list(df.shape),
     })
 
 def describe(columns_json, data_json):
