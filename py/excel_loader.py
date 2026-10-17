@@ -1,5 +1,6 @@
 """Excel helpers executed inside Pyodide (Python compiled to WebAssembly)."""
 import io
+import sys
 import json
 import pandas
 
